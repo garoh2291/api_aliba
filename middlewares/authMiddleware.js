@@ -30,6 +30,6 @@ module.exports = (req, res, next) => {
     next();
   } catch (e) {
     console.log(e);
-    return res.status   (404).json({ error: errorConfig.notAuthorized });
+    return res.status(404).json({ error: errorConfig.notAuthorized });
   }
 };
