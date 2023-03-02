@@ -27,20 +27,18 @@ class fobController {
 
       if (filtered.maxValue) {
         price =
-          +value +
           +filtered.additionalFee1 +
           +filtered.additionalFee2 +
           +filtered.additionalFee3 +
           +filtered.additionalFee4;
       } else {
         price =
-          +value +
           (value * +filtered.additionalFee1) / 100 +
           +filtered.additionalFee2 +
           +filtered.additionalFee3 +
           +filtered.additionalFee4;
       }
-      res.json({ price, obj: filtered });
+      res.json({ price });
     } catch (e) {
       res.status(404).json(e);
     }
@@ -88,7 +86,6 @@ class fobController {
       const { additionalFee1, additionalFee2, additionalFee3, additionalFee4 } =
         req.body;
 
-        
       additionalFee1 && (existed.additionalFee1 = additionalFee1);
       additionalFee2 && (existed.additionalFee2 = additionalFee2);
       additionalFee3 && (existed.additionalFee3 = additionalFee3);
